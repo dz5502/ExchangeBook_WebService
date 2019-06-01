@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeBook_WebService", "ExchangeBook_WebService\ExchangeBook_WebService.csproj", "{D8E6EEEA-E06F-4234-AC2F-7EBEF7BD86DA}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeBook", "ExchangeBook\ExchangeBook.csproj", "{723BC1BB-7A1B-4B6D-9C28-74647006D28B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBaseAccesser", "DataBaseAccesser\DataBaseAccesser.csproj", "{FC05289D-20AA-43C2-BDB1-95C3490F80B3}"
@@ -15,16 +13,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogService", "LogService\Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{0A861611-C170-4D23-BB44-1B4F41204A77}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConfigFile", "ConfigFile", "{A399AE0F-8DA4-409C-A5FB-1EF8A01F36AF}"
+	ProjectSection(SolutionItems) = preProject
+		ExchangeBook_WebService\autofac.xml = ExchangeBook_WebService\autofac.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeBook_WebService", "ExchangeBook_WebService\ExchangeBook_WebService.csproj", "{5D9946DF-9940-4FA2-B030-9ACDCEBE5702}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D8E6EEEA-E06F-4234-AC2F-7EBEF7BD86DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8E6EEEA-E06F-4234-AC2F-7EBEF7BD86DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8E6EEEA-E06F-4234-AC2F-7EBEF7BD86DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8E6EEEA-E06F-4234-AC2F-7EBEF7BD86DA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{723BC1BB-7A1B-4B6D-9C28-74647006D28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{723BC1BB-7A1B-4B6D-9C28-74647006D28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{723BC1BB-7A1B-4B6D-9C28-74647006D28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +46,10 @@ Global
 		{0A861611-C170-4D23-BB44-1B4F41204A77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A861611-C170-4D23-BB44-1B4F41204A77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A861611-C170-4D23-BB44-1B4F41204A77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D9946DF-9940-4FA2-B030-9ACDCEBE5702}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D9946DF-9940-4FA2-B030-9ACDCEBE5702}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D9946DF-9940-4FA2-B030-9ACDCEBE5702}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D9946DF-9940-4FA2-B030-9ACDCEBE5702}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

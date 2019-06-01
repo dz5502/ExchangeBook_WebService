@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<autofac>
+  
+    <components name="0">
+        <type>LogService.LogService, LogService</type>
+        <services name="0" type="LogService.ILogService,LogService" />
+        <injectProperties>true</injectProperties>
+    </components>
+
+</autofac>
