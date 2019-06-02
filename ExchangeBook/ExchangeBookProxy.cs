@@ -1,4 +1,5 @@
-﻿using LogService;
+﻿using DataBaseAccesser;
+using LogService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,12 @@ namespace ExchangeBook
     public class ExchangeBookProxy
     {
 
-        private ExchangeBookProxy() { }
+        private ExchangeBookProxy()
+        {
+            _DataBaseManager = new DataBaseManager();
+        }
         private static readonly ExchangeBookProxy instance = new ExchangeBookProxy();
+        private DataBaseManager _DataBaseManager;
         public static ExchangeBookProxy GetInstance()
         {
             return instance;
@@ -31,6 +36,8 @@ namespace ExchangeBook
             _logservice.Error("12345");
             _logservice.Warn("12346");
             _logservice.Fatal("12347");
+
+            bool exist = _DataBaseManager.Login("5502","123");
 
         }
 

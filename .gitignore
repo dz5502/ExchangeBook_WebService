@@ -654,3 +654,10 @@ logs
 /Utility/obj/Release/Utility.csprojAssemblyReference.cache
 /Utility/obj/Release/Utility.dll
 /Utility/obj/Release/Utility.pdb
+/packages/PetaPoco.5.1.306/PetaPoco.5.1.306.nupkg
+/packages/PetaPoco.5.1.306/.signature.p7s
+/DataBaseAccesser/obj/Debug/TempPE/Models.Generated.Database.cs.dll
+/ExchangeBook/bin/Debug/DataBaseAccesser.dll
+/ExchangeBook/bin/Debug/DataBaseAccesser.pdb
+/ExchangeBook_WebService/bin/DataBaseAccesser.dll
+/ExchangeBook_WebService/bin/DataBaseAccesser.pdb

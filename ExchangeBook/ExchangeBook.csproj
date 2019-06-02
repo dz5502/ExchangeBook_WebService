@@ -46,6 +46,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataBaseAccesser\DataBaseAccesser.csproj">
+      <Project>{fc05289d-20aa-43c2-bdb1-95c3490f80b3}</Project>
+      <Name>DataBaseAccesser</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{d44eba9f-c886-4d1b-a832-fbc143acc288}</Project>
       <Name>DTO</Name>
