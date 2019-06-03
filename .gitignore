@@ -661,3 +661,10 @@ logs
 /ExchangeBook/bin/Debug/DataBaseAccesser.pdb
 /ExchangeBook_WebService/bin/DataBaseAccesser.dll
 /ExchangeBook_WebService/bin/DataBaseAccesser.pdb
+/DataBaseAccesser/bin
+/ExchangeBook/bin/Debug
+/ExchangeBook/bin/Release
+/ExchangeBook_WebService/bin
+/ExchangeBook_WebService/obj/Release/Package/PackageTmp/bin
+/Utility/bin/Release
+/DataBaseAccesser/obj/Release

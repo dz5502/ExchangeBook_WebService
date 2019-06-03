@@ -20,8 +20,16 @@ namespace ExchangeBook_WebService
         [WebMethod]
         public string HelloWorld()
         {
-            ExchangeBookProxy.GetInstance().Test();
             return "Hello World";
         }
+
+        [WebMethod(Description ="登录验证")]
+        public String Login(String name, String pwd)
+        {
+            ExchangeBookProxy instance =  ExchangeBookProxy.GetInstance();
+            String result = instance.Login(name, pwd);
+            return result;
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DataBaseAccesser;
+using DTO;
 using LogService;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Utility;
+using Newtonsoft.Json;
 
 namespace ExchangeBook
 {
@@ -14,31 +16,41 @@ namespace ExchangeBook
 
         private ExchangeBookProxy()
         {
+            IOCContainer.InitAutofac();
             _DataBaseManager = new DataBaseManager();
+            _logservice = IOCContainer.GetFromFac<ILogService>();
         }
         private static readonly ExchangeBookProxy instance = new ExchangeBookProxy();
-        private DataBaseManager _DataBaseManager;
+        private static DataBaseManager _DataBaseManager;
         public static ExchangeBookProxy GetInstance()
         {
             return instance;
         }
 
 
-        ILogService _logservice;
+        private ILogService _logservice;
 
-
-        public void Test()
+        /// <summary>
+        /// 登录验证
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
+        public String Login(String name, String pwd)
         {
-            IOCContainer.InitAutofac();
-            _logservice = IOCContainer.GetFromFac<ILogService>();
+            LoginResult result = new LoginResult();
+            LoginUser user = _DataBaseManager.GetUser(name, pwd);
+            if (user == null)
+            {
+                _logservice.Info($"用户【{name}】不存在");
+                return null;
 
-            _logservice.Info("1234");
-            _logservice.Error("12345");
-            _logservice.Warn("12346");
-            _logservice.Fatal("12347");
-
-            bool exist = _DataBaseManager.Login("5502","123");
-
+            }
+            result.result = true;
+            result.IsManager = user.isManager;
+            _logservice.Info($"用户【{name}】登录成功");
+            //返回结果JSon字符串
+            return JsonConvert.SerializeObject(result);
         }
 
 
