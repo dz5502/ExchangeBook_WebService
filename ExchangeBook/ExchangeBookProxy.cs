@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Utility;
 using Newtonsoft.Json;
+using System.IO;
 
 namespace ExchangeBook
 {
@@ -54,7 +55,29 @@ namespace ExchangeBook
         }
 
 
+        /// <summary>
+        /// Gird数据测试
+        /// </summary>
+        /// <returns></returns>
+        public String GridData()
+        {
+            String re = null;
+            BookDetailData data = new BookDetailData();
+            String path = @"G:\Work\Resources\backgroud.bmp";
+            FileStream image = new FileStream(path, FileMode.Open);
+            BinaryReader reader = new BinaryReader(image);
+
+            re = Convert.ToBase64String(reader.ReadBytes((int)image.Length));
 
 
+            data.Image = re;
+            data.Author = "5502";
+            data.Description = "12345678900000";
+            data.UserName = "十二"; ;
+            data.Level = 9;
+
+            image.Close();
+            return JsonConvert.SerializeObject(data) ;
+        }
     }
 }
