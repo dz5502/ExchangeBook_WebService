@@ -59,25 +59,36 @@ namespace ExchangeBook
         /// Gird数据测试
         /// </summary>
         /// <returns></returns>
-        public String GridData()
+        public String GridData(int currentPage,int count, String family)
         {
-            String re = null;
-            BookDetailData data = new BookDetailData();
-            String path = @"G:\Work\Resources\backgroud.bmp";
-            FileStream image = new FileStream(path, FileMode.Open);
-            BinaryReader reader = new BinaryReader(image);
+            BookDetailData dataList = new BookDetailData();
+            BookInfo data = new BookInfo();
+            int total;
+            try
+            {
+                foreach (book_info item in _DataBaseManager.GetBookList(currentPage,count, family, out total))//从数据库获取所有该类书籍
+                {
 
-            re = Convert.ToBase64String(reader.ReadBytes((int)image.Length));
+                    FileStream image = new FileStream(item.image_path, FileMode.Open);
+                    BinaryReader reader = new BinaryReader(image);
 
-
-            data.Image = re;
-            data.Author = "5502";
-            data.Description = "12345678900000";
-            data.UserName = "十二"; ;
-            data.Level = 9;
-
-            image.Close();
-            return JsonConvert.SerializeObject(data) ;
+                    String imageBase64String = Convert.ToBase64String(reader.ReadBytes((int)image.Length));
+                    data.Image = imageBase64String;
+                    data.Author = item.author;
+                    data.Description = item.description;
+                    data.UserName = item.user_name; ;
+                    data.Age = item.age;
+                    image.Close();
+                    dataList.Data.Add(data);
+                }
+                dataList.TotalCount = total;
+                return JsonConvert.SerializeObject(dataList);
+            }
+            catch (Exception e)
+            {
+                _logservice.Error(e.Message);
+                return null;
+            }
         }
     }
 }

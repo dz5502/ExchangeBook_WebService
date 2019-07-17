@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookDetailData.cs" />
+    <Compile Include="GetBookListParameter.cs" />
     <Compile Include="LoginResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

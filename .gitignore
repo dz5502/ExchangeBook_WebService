@@ -668,3 +668,4 @@ logs
 /ExchangeBook_WebService/obj/Release/Package/PackageTmp/bin
 /Utility/bin/Release
 /DataBaseAccesser/obj/Release
+/DataBaseAccesser/obj/Debug

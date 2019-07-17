@@ -137,6 +137,78 @@ namespace DataBaseAccesser
 
     
 
+	[TableName("dbo.book_info")]
+
+
+
+	[PrimaryKey("id")]
+
+
+
+
+	[ExplicitColumns]
+
+    public partial class book_info : ExchangeBookDB.Record<book_info>  
+    {
+
+
+
+		[Column] public int id { get; set; }
+
+
+
+
+
+		[Column] public string user_name { get; set; }
+
+
+
+
+
+		[Column] public string image_path { get; set; }
+
+
+
+
+
+		[Column] public string book_name { get; set; }
+
+
+
+
+
+		[Column] public string author { get; set; }
+
+
+
+
+
+		[Column] public string description { get; set; }
+
+
+
+
+
+		[Column] public string family { get; set; }
+
+
+
+
+
+		[Column] public int age { get; set; }
+
+
+
+
+
+		[Column] public bool exchanged { get; set; }
+
+
+
+	}
+
+    
+
 	[TableName("dbo.LoginUser")]
 
 

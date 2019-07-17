@@ -34,10 +34,10 @@ namespace ExchangeBook_WebService
 
 
         [WebMethod(Description = "Gird数据测试")]
-        public String GridData()
+        public String GridData(int currentPage, int count, String family = null)
         {
             ExchangeBookProxy instance = ExchangeBookProxy.GetInstance();
-            return instance.GridData();
+            return instance.GridData(currentPage, count, family);
         }
     }
 }
